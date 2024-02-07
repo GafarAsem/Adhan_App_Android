@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:textAlignment="center"
+    >
+
+    <ToggleButton
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="0.5"/>
+    <TextView
+        android:textAlignment="center"
+
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:layout_width="0dp"
+        android:text=""
+        android:gravity="center"
+        android:textSize="10dp"
+        android:textColor="@color/black"
+        android:id="@+id/list_reminder_time"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:text="8:00 ص"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/list_time_pray"
+        android:textColor="@color/green100"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/list_name_pray"
+        android:text="العشاء"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        />
+
+
+</LinearLayout>
