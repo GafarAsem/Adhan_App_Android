@@ -1,4 +1,4 @@
-package com.farms.adhanapp.services;
+package com.farms.adhanapp.controller;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-public class PermissionUtils {
+public class PermissionController {
 
     private static final int PERMISSION_REQUEST_CODE = 1;
 

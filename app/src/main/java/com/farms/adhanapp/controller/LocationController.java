@@ -8,12 +8,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Looper;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.batoulapps.adhan2.Coordinates;
-import com.farms.adhanapp.services.PermissionUtils;
 
 import java.util.List;
 import java.util.Locale;
@@ -24,10 +20,10 @@ public  class   LocationController {
     private static String cityName=null;
 
     public static boolean requestPermission(AppCompatActivity appCompatActivity, String permissionString) {
-        return PermissionUtils.requestPermission(appCompatActivity, permissionString);
+        return PermissionController.requestPermission(appCompatActivity, permissionString);
     }
 
-    @SuppressLint("MissingPermission")
+    @SuppressLint({"MissingPermission", "SuspiciousIndentation"})
     public static boolean fetchLocationUpdates(Context context, CurrentLocation updateLocation) {
 
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -41,30 +37,35 @@ public  class   LocationController {
         };
 
         if (requestPermission((AppCompatActivity) context, "android.permission.ACCESS_FINE_LOCATION")) {
-            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER,  locationListener, Looper.getMainLooper());
+            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER,  locationListener, Looper.myLooper());
             return true;
         }
         else
         return false;
 
     }
-    static String searchCityName(Context context){
-        String cityName = "";
-
-        try {
-            Geocoder geocoder = new Geocoder(context, Locale.getDefault());
-            List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-            assert addresses != null;
-            if (addresses.size() > 0) {
-                Address address = addresses.get(0);
-                cityName = address.getLocality();
-            }
+    public static String searchCityName(Context context){
+        if(!(cityName==null))
             return cityName;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        else if(DataController.isDataExist(context))
+            return DataController.getString(context,"city");
 
+        else {
+            try {
+                cityName="";
+                Geocoder geocoder = new Geocoder(context, new Locale("ar"));
+                List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                assert addresses != null;
+                if (addresses.size() > 0) {
+                    Address address = addresses.get(0);
+                    cityName = address.getLocality();
+                }
+                return cityName;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
 
     }
 

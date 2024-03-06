@@ -4,38 +4,28 @@ import android.os.Build;
 
 import com.batoulapps.adhan2.Prayer;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Pray {
 
     private Prayer prayer;
-    private String namePray=" ";
-    private LocalTime timeAdhan;
-    private LocalTime timePray;
-    private LocalTime endTimePray;
-    private Adhan adhan;
-    private boolean alarm;
+    private LocalDateTime dateTimePray;
 
-    public Pray(){
-this.alarm=true;
+
+    public Pray(Prayer prayer, LocalDateTime dateTimePray) {
+        this.prayer = prayer;
+        this.dateTimePray = dateTimePray;
     }
 
-    public Pray(Prayer namePray, LocalTime timeAdhan, LocalTime timePray, LocalTime endTimePray, Adhan adhan) {
-        this.prayer = namePray;
-        this.timeAdhan = timeAdhan;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            this.timeAdhan = timeAdhan.plusHours(3);
-        } this.endTimePray = endTimePray;
-        this.adhan = adhan;
-        this.alarm=true;
-
+    public LocalDateTime getDateTimePray() {
+        return dateTimePray;
     }
 
-    public Pray(Prayer namePray, LocalTime timeAdhan) {
-        this.prayer = namePray;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            this.timeAdhan = timeAdhan.plusHours(3);
-        }
+    public void setDateTimePray(LocalDateTime dateTimePray) {
+        this.dateTimePray = dateTimePray;
     }
 
     public Prayer getPrayer() {
@@ -46,71 +36,27 @@ this.alarm=true;
         this.prayer = prayer;
     }
 
-    public LocalTime getTimeAdhan() {
-        return timeAdhan;
-    }
 
-    public void setTimeAdhan(LocalTime timeAdhan) {
-        this.timeAdhan = timeAdhan;
-    }
+    public String getArabicNamePray() {
+        if(this.getDateTimePray().getDayOfWeek().equals(DayOfWeek.FRIDAY)&&this.getPrayer().equals(Prayer.DHUHR))
+            return "الجمعة";
 
-    public LocalTime getTimePray() {
-        return timePray;
-    }
-
-    public void setTimePray(LocalTime timeLocalTimePray) {
-        this.timePray = timePray;
-    }
-
-    public LocalTime getEndTimePray() {
-        return endTimePray;
-    }
-
-    public void setEndTimePray(LocalTime endTimePray) {
-        this.endTimePray = endTimePray;
-    }
-
-    public Adhan getAdhan() {
-        return adhan;
-    }
-
-    public void setAdhan(Adhan adhan) {
-        this.adhan = adhan;
-    }
-
-    public String getNamePray() {
         switch (prayer){
-
-
-            case FAJR:
-                namePray="الفجر";
-                break;
-            case DHUHR:
-                namePray="الظهر";
-
-                break;
-            case ASR:
-                namePray="العصر";
-                break;
-            case MAGHRIB:
-                namePray="المغرب";
-                break;
-            case ISHA:
-                namePray="العشاء";
-                break;
+        case FAJR:
+            return "الفجر";
+        case DHUHR:
+            return "الظهر";
+        case ASR:
+           return "العصر";
+        case MAGHRIB:
+            return "المغرب";
+        case ISHA:
+            return "العشاء";
+            default:
+                return "none";
         }
-        return namePray;
+
     }
 
-    public boolean isAlarm() {
-        return alarm;
-    }
 
-    public void setAlarm(boolean alarm) {
-        this.alarm = alarm;
-    }
-
-    public void setNamePray(String namePray) {
-        this.namePray = namePray;
-    }
 }
