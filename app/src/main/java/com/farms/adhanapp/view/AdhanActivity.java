@@ -2,6 +2,7 @@ package com.farms.adhanapp.view;
 
 import static android.app.ProgressDialog.show;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.widget.*;
 import androidx.annotation.Nullable;
@@ -79,6 +80,7 @@ public class AdhanActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("SetTextI18n")
     public void setReminderText() {
 
         try {

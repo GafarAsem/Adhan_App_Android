@@ -55,8 +55,8 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
         buttonSave.setOnClickListener(v -> {
-            Location location=new Location();
-            DataController.saveData(this,location.getLatitude(),location.getLongitude(),textViewCityName.getText().toString(), CalculationMethod.MUSLIM_WORLD_LEAGUE,switchAutoLocation.isChecked(),Float.parseFloat(editTextFajrAngle.getText().toString()),Float.parseFloat(editTextIshaAngle.getText().toString()));
+
+            DataController.saveData(this, (float) LocationController.getLocation().getLatitude(), (float) LocationController.getLocation().getLongitude(),textViewCityName.getText().toString(), CalculationMethod.MUSLIM_WORLD_LEAGUE,switchAutoLocation.isChecked(),Float.parseFloat(editTextFajrAngle.getText().toString()),Float.parseFloat(editTextIshaAngle.getText().toString()));
             this.finish();
         });
 

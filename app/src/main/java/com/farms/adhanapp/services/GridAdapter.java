@@ -64,6 +64,7 @@ public class GridAdapter extends ArrayAdapter<Pray> {
         {
             viewHolder.textViewAdhanTime.setTextColor(Color.rgb(255, 0, 0));
             viewHolder.textViewPrayerName.setTextColor(Color.rgb(255, 0, 0));
+            ((AdhanActivity)context).setReminderText();
         }
         switch (pray.getPrayer()){
             case FAJR:

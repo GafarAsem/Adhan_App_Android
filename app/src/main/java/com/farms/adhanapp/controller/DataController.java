@@ -22,7 +22,7 @@ public interface DataController {
     }
     static void fetchData(Context context){
 
-            SharedPreferences sharedPreferences = context.getSharedPreferences("location", Context.MODE_PRIVATE);
+            SharedPreferences sharedPreferences =  context.getSharedPreferences("location", Context.MODE_PRIVATE);
             LocationController.setLatLocation(sharedPreferences.getFloat("lat", 0));
             LocationController.setLonLocation(sharedPreferences.getFloat("lon", 0));
             LocationController.setCityName(sharedPreferences.getString("city", "none"));

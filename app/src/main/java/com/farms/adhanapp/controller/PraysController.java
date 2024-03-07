@@ -40,7 +40,7 @@ public class  PraysController {
 
             Coordinates coordinates = new Coordinates(LocationController.getLocation().getLatitude(), LocationController.getLocation().getLongitude());
             DateComponents dateComponents = new DateComponents(LocalDate.now().getYear(), LocalDate.now().getMonth().getValue(), LocalDate.now().getDayOfMonth());
-            CalculationParameters calculationParameters = new CalculationParameters(DataController.getFloat(context,"fajr angel"),DataController.getFloat(context,"isha angel"), 0, CalculationMethod.MUSLIM_WORLD_LEAGUE, Madhab.SHAFI, HighLatitudeRule.MIDDLE_OF_THE_NIGHT, new PrayerAdjustments(), new PrayerAdjustments());
+            CalculationParameters calculationParameters = new CalculationParameters(15.5,17, 0, CalculationMethod.MUSLIM_WORLD_LEAGUE, Madhab.SHAFI, HighLatitudeRule.MIDDLE_OF_THE_NIGHT, new PrayerAdjustments(), new PrayerAdjustments());
             PrayerTimes prayerTimes = new PrayerTimes(coordinates, dateComponents, calculationParameters);
 
             prays[0] = new Pray(Prayer.FAJR,getDateTime(prayerTimes.getFajr()));
