@@ -16,10 +16,10 @@
         android:theme="@style/Theme.AdhanApp"
         tools:targetApi="31" >
         <activity
-            android:name=".view.SettingActivity"
+            android:name=".setting.view.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".view.AdhanActivity"
+            android:name=".pray.view.AdhanActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

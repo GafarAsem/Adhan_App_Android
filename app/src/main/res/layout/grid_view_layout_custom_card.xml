@@ -8,9 +8,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="7dp"
     app:cardCornerRadius="15dp"
-    app:cardMaxElevation="0dp"
+    app:cardMaxElevation="5dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
+
     android:clipToPadding="true"
     >
     <LinearLayout
@@ -33,7 +34,6 @@
         android:layout_weight="1"
         android:text="Fajr"
         android:textSize="20dp"
-        android:textColor="@color/black"
         android:textStyle="bold"
         android:paddingStart="7dp"
         />

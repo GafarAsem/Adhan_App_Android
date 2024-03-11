@@ -1,17 +1,17 @@
-package com.farms.adhanapp.model;
+package com.farms.adhanapp.location.model;
 
-public class Location {
+public class LocationModel {
 
     private String country;
     private String city;
     private long latitude;
     private long longitude;
 
-    public Location() {
+    public LocationModel() {
 
     }
 
-    public Location(String country, String city, long latitude, long longitude) {
+    public LocationModel(String country, String city, long latitude, long longitude) {
         this.country = country;
         this.city = city;
         this.latitude = latitude;

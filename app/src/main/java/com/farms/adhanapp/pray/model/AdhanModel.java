@@ -1,16 +1,16 @@
-package com.farms.adhanapp.model;
+package com.farms.adhanapp.pray.model;
 
-public class Adhan {
+public class AdhanModel {
 
     private String nameSheikh;
     private String pathAdhan;
 
-    public Adhan(String nameSheikh, String pathAdhan) {
+    public AdhanModel(String nameSheikh, String pathAdhan) {
         this.nameSheikh = nameSheikh;
         this.pathAdhan = pathAdhan;
     }
 
-    public Adhan() {
+    public AdhanModel() {
     }
 
     public String getNameSheikh() {

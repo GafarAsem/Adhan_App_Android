@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AdhanActivity"
+    tools:context=".pray.view.AdhanActivity"
     android:orientation="vertical">
 
     <TextView
@@ -16,7 +16,6 @@
     android:textSize="25dp"
     android:fontFamily="sans-serif"
     android:textStyle="bold"
-    android:textColor="@color/black"
     android:paddingEnd="20dp"/>
 
 
@@ -26,10 +25,10 @@
         android:layout_width="match_parent"
         android:text=""
         android:layout_weight="0.5"
-        android:gravity="center_horizontal"
-        android:textSize="20dp"
-        android:textStyle="bold"
         android:textColor="@color/green100"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:id="@+id/activity_adhan_text_view_reminder"
         />
 
@@ -54,7 +53,6 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif"
         android:textStyle="bold"
-        android:textColor="@color/black"
         android:paddingEnd="20dp"/>
     <ListView
         android:layout_width="match_parent"
@@ -120,7 +118,6 @@
         android:layout_height="match_parent"
         android:layout_weight="0.2"
         android:src="@drawable/edit"
-        android:backgroundTint="@color/white"
         android:scaleType="fitCenter"
         android:visibility="gone"
 
@@ -133,7 +130,6 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
-        android:textColor="@color/black"
         android:paddingRight="15dp"
         android:text="سيئون"
         android:textSize="20dp"
@@ -147,7 +143,6 @@
 android:layout_gravity="center"
 
         android:fontFamily="sans-serif"
-        android:textColor="@color/black"
         android:padding="15dp"
         android:textStyle="bold"/>
 
@@ -160,37 +155,35 @@ android:layout_gravity="center"
     android:textDirection="rtl"
 
     >
+
     <ImageButton
+        android:id="@+id/activity_adhan_button_city_edit"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.2"
-        android:backgroundTint="@color/white"
-        android:id="@+id/activity_adhan_button_city_edit"
-        android:src="@drawable/edit"
-        android:scaleType="fitCenter"
         android:layout_margin="20dp"
-        />
+        android:layout_weight="0.2"
+        android:scaleType="fitCenter"
+        android:src="@drawable/search" />
+
     <TextView
+        android:id="@+id/activity_adhan_text_view_city_name"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
-        android:textColor="@color/black"
-        android:paddingRight="15dp"
-        android:text="سيئون"
-        android:textSize="20dp"
         android:gravity="center_vertical"
-        android:id="@+id/activity_adhan_text_view_city_name"
-        android:textStyle="bold"/>
+        android:paddingRight="15dp"
+        android:text="لم يتم تحديد الموقع"
+        android:textSize="20dp"
+        android:textStyle="bold" />
     <ImageView
         android:layout_width="0dp"
         android:src="@drawable/location"
         android:layout_height="match_parent"
-        android:layout_weight="0.2"
+        android:layout_weight="0.25"
 android:layout_gravity="center"
 
         android:fontFamily="sans-serif"
-        android:textColor="@color/black"
         android:padding="15dp"
         android:textStyle="bold"/>
 

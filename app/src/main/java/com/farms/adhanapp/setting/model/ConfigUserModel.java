@@ -1,19 +1,19 @@
-package com.farms.adhanapp.model;
+package com.farms.adhanapp.setting.model;
 
 import com.batoulapps.adhan2.CalculationMethod;
 
 import android.location.Location;
-public class ConfigUser {
+public class ConfigUserModel {
 
     private Location currentLocation;
     private String country;
     private String city;
     private CalculationMethod calculationMethod;
 
-    public ConfigUser() {
+    public ConfigUserModel() {
     }
 
-    public ConfigUser(Location currentLocation, String country, String city, CalculationMethod calculationMethod) {
+    public ConfigUserModel(Location currentLocation, String country, String city, CalculationMethod calculationMethod) {
         this.currentLocation = currentLocation;
         this.country = country;
         this.city = city;

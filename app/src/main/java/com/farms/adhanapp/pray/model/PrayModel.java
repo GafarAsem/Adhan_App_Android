@@ -1,21 +1,17 @@
-package com.farms.adhanapp.model;
-
-import android.os.Build;
+package com.farms.adhanapp.pray.model;
 
 import com.batoulapps.adhan2.Prayer;
 
 import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
-public class Pray {
+public class PrayModel {
 
     private Prayer prayer;
     private LocalDateTime dateTimePray;
 
 
-    public Pray(Prayer prayer, LocalDateTime dateTimePray) {
+    public PrayModel(Prayer prayer, LocalDateTime dateTimePray) {
         this.prayer = prayer;
         this.dateTimePray = dateTimePray;
     }
@@ -53,7 +49,7 @@ public class Pray {
         case ISHA:
             return "العشاء";
             default:
-                return "none";
+                return "";
         }
 
     }
